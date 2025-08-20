@@ -1,97 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Claim Your Free Chick-fil-A Reward</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chick‑fil‑A® – Offers</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #fff;
-      text-align: center;
-      color: #333;
+    :root{
+      --cfa-red:#e5173f;
+      --cfa-dark:#2d2d2d;
+      --cfa-text:#404040;
+      --cfa-muted:#6f6f6f;
+      --card-shadow:0 8px 20px rgba(0,0,0,.06);
+      --radius:16px;
+      --radius-sm:12px;
+      --max-w:1150px;
     }
-
-    .header {
-      padding: 40px 20px 20px;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+      color:var(--cfa-text);
+      background:#fff;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
     }
-
-    .header h1 {
-      font-size: 36px;
-      color: #e5173f;
-      margin: 0;
+    a{color:inherit}
+    .container{max-width:var(--max-w);margin:0 auto;padding:0 20px}
+    /* Top bar */
+    .topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid #eee}
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand img{height:28px;width:auto}
+    .nav{display:flex;gap:22px;font-size:14px;color:var(--cfa-muted)}
+    .actions{display:flex;gap:10px}
+    .btn-sm{
+      border:1px solid #eee;border-radius:999px;padding:8px 14px;font-size:14px;background:white;
     }
-
-    .product-grid {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding: 20px;
+    .btn-primary-sm{
+      background:var(--cfa-red); color:#fff; border-radius:999px; padding:8px 16px; border:none;
     }
-
-    .product {
-      width: 300px;
-      border: 1px solid #eee;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    /* Hero */
+    .hero{padding:48px 0 10px}
+    .hero-inner{
+      display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:center;
     }
-
-    .product img {
-      width: 100%;
-      height: auto;
+    .hero-card{
+      background:#fff;border:1px solid #f1f1f1;border-radius:var(--radius);box-shadow:var(--card-shadow);padding:36px 28px;
     }
-
-    .product h2 {
-      font-size: 20px;
-      color: #003366;
-      margin: 10px 0 5px;
+    .eyebrow{font-size:14px;color:var(--cfa-muted);margin-bottom:6px}
+    .headline{font-size:48px;line-height:1.05;color:var(--cfa-red);margin:0 0 14px}
+    .copy{font-size:16px;color:var(--cfa-dark);margin:0 0 22px}
+    .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      display:inline-block; text-decoration:none; border:none; cursor:pointer;
+      font-weight:600; border-radius:999px; padding:14px 22px; transition:transform .05s ease;
+      box-shadow:0 6px 14px rgba(229,23,63,.18);
     }
-
-    .product p {
-      font-size: 14px;
-      padding: 0 10px 10px;
+    .btn:active{transform:translateY(1px)}
+    .btn-primary{background:var(--cfa-red);color:#fff}
+    .btn-ghost{background:#fff;color:var(--cfa-red);border:1px solid #ffd7de}
+    .hero-art{
+      background:#fff;border:1px solid #f1f1f1;border-radius:var(--radius);box-shadow:var(--card-shadow);
+      display:flex;align-items:center;justify-content:center;padding:26px;min-height:280px;
     }
-
-    .cta-button {
-      display: inline-block;
-      margin: 30px auto 50px;
-      background-color: #e5173f;
-      color: white;
-      text-decoration: none;
-      padding: 14px 30px;
-      font-size: 18px;
-      border-radius: 8px;
+    .hero-art img{max-width:100%;height:auto;border-radius:12px}
+    /* Grid */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:26px 0 60px}
+    .card{
+      background:#fff;border:1px solid #f1f1f1;border-radius:var(--radius-sm);box-shadow:var(--card-shadow);overflow:hidden
+    }
+    .card img{width:100%;height:210px;object-fit:cover}
+    .card-body{padding:16px}
+    .kicker{color:#c22; font-size:12px; font-weight:700; letter-spacing:.04em; text-transform:uppercase}
+    .title{margin:6px 0 6px;font-size:20px;color:#17324a}
+    .desc{margin:0;color:#555;font-size:14px;line-height:1.45}
+    /* Center CTA */
+    .center-cta{display:flex;justify-content:center;padding:12px 0 70px}
+    /* Footer mini */
+    .foot{border-top:1px solid #eee;color:#8b8b8b;font-size:12px;padding:20px 0 40px;text-align:center}
+    @media (max-width:980px){
+      .hero-inner{grid-template-columns:1fr}
+      .headline{font-size:38px}
+      .grid{grid-template-columns:1fr;gap:16px}
     }
   </style>
 </head>
 <body>
-
-  <div class="header">
-    <h1>An original then, an original now</h1>
-    <p style="font-size: 18px;">Click below to claim your free Chick-fil-A sandwich reward.</p>
-  </div>
-
-  <div class="product-grid">
-    <div class="product">
-      <img src="https://www.chick-fil-a.com/-/media/images/cfa/menu/full-menu/beverages/cherryberrysprite.ashx" alt="Cherry Berry & Sprite">
-      <h2>Cherry Berry & Sprite®</h2>
-      <p>Refreshing natural cherry and berry flavors with crisp Sprite fizz.</p>
+  <!-- Top bar -->
+  <div class="container topbar">
+    <div class="brand">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Chick-fil-A_Logo.svg" alt="Chick‑fil‑A">
+      <span style="font-weight:700;color:#c22;">Find a restaurant</span>
     </div>
-    <div class="product">
-      <img src="https://www.chick-fil-a.com/-/media/images/cfa/menu/full-menu/entrees/pretzelcheddarclub.ashx" alt="Pretzel Cheddar Club">
-      <h2>Pretzel Cheddar Club</h2>
-      <p>Stacked with grilled chicken, cheddar, and bacon on a pretzel bun.</p>
+    <div class="nav">
+      <span>Menu</span><span>Stories</span><span>About</span><span>Careers</span>
     </div>
-    <div class="product">
-      <img src="https://www.chick-fil-a.com/-/media/images/cfa/menu/full-menu/sides/wafflefries.ashx" alt="Waffle Potato Fries">
-      <h2>Waffle Potato Fries</h2>
-      <p>Lightly salted and perfectly crispy. A fan favorite.</p>
+    <div class="actions">
+      <button class="btn-sm">Sign in</button>
+      <button class="btn-primary-sm">Order now</button>
     </div>
   </div>
 
-  <a href="{{URL}}" class="cta-button">Order Now</a>
+  <!-- Hero -->
+  <section class="container hero">
+    <div class="hero-inner">
+      <div class="hero-card">
+        <div class="eyebrow">Welcome</div>
+        <h1 class="headline">An original then, an<br/>original now</h1>
+        <p class="copy">Bright sips & cozy bites. Click below to claim your free Chick‑fil‑A® sandwich reward.</p>
+        <div class="hero-ctas">
+          <!-- BullPhish tracking token goes here -->
+          <a href="{{URL}}" class="btn btn-primary">Order pickup</a>
+          <a href="{{URL}}" class="btn btn-ghost">Order delivery</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <!-- Use any safe hosted image; swap if you prefer another hero -->
+        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1600&auto=format&fit=crop" alt="Chicken sandwich">
+      </div>
+    </div>
+  </section>
 
+  <!-- Feature grid -->
+  <section class="container">
+    <div class="grid">
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?q=80&w=1200&auto=format&fit=crop" alt="Cherry Berry & Sprite">
+        <div class="card-body">
+          <div class="kicker">Limited time</div>
+          <h3 class="title">Cherry Berry & Sprite®</h3>
+          <p class="desc">Refreshing natural cherry and berry flavors with crisp Sprite fizz.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?q=80&w=1200&auto=format&fit=crop" alt="Pretzel Cheddar Club">
+        <div class="card-body">
+          <div class="kicker">Limited time</div>
+          <h3 class="title">Pretzel Cheddar Club</h3>
+          <p class="desc">Stacked with grilled chicken, cheddar, and bacon on a pretzel bun.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1541599188778-cdc73298e8f9?q=80&w=1200&auto=format&fit=crop" alt="Waffle Potato Fries">
+        <div class="card-body">
+          <div class="kicker">Customer favorite</div>
+          <h3 class="title">Waffle Potato Fries</h3>
+          <p class="desc">Lightly salted and perfectly crispy. A fan favorite.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Center CTA -->
+  <div class="center-cta">
+    <a href="{{URL}}" class="btn btn-primary">Order Now</a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="container foot">
+    <div>© 2025 CFA Properties, Inc. This page is for training simulation only.</div>
+  </footer>
 </body>
 </html>
