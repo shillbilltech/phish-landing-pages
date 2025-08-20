@@ -3,160 +3,109 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chick‑fil‑A® – Offers</title>
+  <title>Special Offer – Rewards</title>
   <style>
     :root{
-      --cfa-red:#e5173f;
-      --cfa-dark:#2d2d2d;
-      --cfa-text:#404040;
-      --cfa-muted:#6f6f6f;
-      --card-shadow:0 8px 20px rgba(0,0,0,.06);
-      --radius:16px;
-      --radius-sm:12px;
-      --max-w:1150px;
+      --red:#e5173f; --dark:#2d2d2d; --text:#404040; --muted:#767676;
+      --shadow:0 8px 20px rgba(0,0,0,.06); --r:16px; --rs:12px; --w:1150px;
     }
     *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
-      color:var(--cfa-text);
-      background:#fff;
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-    }
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:#fff}
     a{color:inherit}
-    .container{max-width:var(--max-w);margin:0 auto;padding:0 20px}
-    /* Top bar */
-    .topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid #eee}
-    .brand{display:flex;align-items:center;gap:10px}
-    .brand img{height:28px;width:auto}
-    .nav{display:flex;gap:22px;font-size:14px;color:var(--cfa-muted)}
-    .actions{display:flex;gap:10px}
-    .btn-sm{
-      border:1px solid #eee;border-radius:999px;padding:8px 14px;font-size:14px;background:white;
-    }
-    .btn-primary-sm{
-      background:var(--cfa-red); color:#fff; border-radius:999px; padding:8px 16px; border:none;
-    }
-    /* Hero */
-    .hero{padding:48px 0 10px}
-    .hero-inner{
-      display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:center;
-    }
-    .hero-card{
-      background:#fff;border:1px solid #f1f1f1;border-radius:var(--radius);box-shadow:var(--card-shadow);padding:36px 28px;
-    }
-    .eyebrow{font-size:14px;color:var(--cfa-muted);margin-bottom:6px}
-    .headline{font-size:48px;line-height:1.05;color:var(--cfa-red);margin:0 0 14px}
-    .copy{font-size:16px;color:var(--cfa-dark);margin:0 0 22px}
-    .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{
-      display:inline-block; text-decoration:none; border:none; cursor:pointer;
-      font-weight:600; border-radius:999px; padding:14px 22px; transition:transform .05s ease;
-      box-shadow:0 6px 14px rgba(229,23,63,.18);
-    }
-    .btn:active{transform:translateY(1px)}
-    .btn-primary{background:var(--cfa-red);color:#fff}
-    .btn-ghost{background:#fff;color:var(--cfa-red);border:1px solid #ffd7de}
-    .hero-art{
-      background:#fff;border:1px solid #f1f1f1;border-radius:var(--radius);box-shadow:var(--card-shadow);
-      display:flex;align-items:center;justify-content:center;padding:26px;min-height:280px;
-    }
-    .hero-art img{max-width:100%;height:auto;border-radius:12px}
-    /* Grid */
+    .wrap{max-width:var(--w);margin:0 auto;padding:0 20px}
+    /* top */
+    .top{display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid #eee}
+    .top img{height:28px;width:auto}
+    .brand{font-weight:700;color:#c22}
+    /* hero */
+    .hero{padding:46px 0 10px}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
+    .panel{background:#fff;border:1px solid #f1f1f1;border-radius:var(--r);box-shadow:var(--shadow);padding:34px 28px}
+    .eyebrow{font-size:14px;color:var(--muted);margin-bottom:6px}
+    .h1{font-size:44px;line-height:1.07;color:var(--red);margin:0 0 10px}
+    .copy{margin:0 0 22px}
+    .cta{display:inline-block;background:var(--red);color:#fff;text-decoration:none;border:none;border-radius:999px;padding:14px 24px;font-weight:600;box-shadow:0 6px 14px rgba(229,23,63,.18)}
+    .art{background:#fff;border:1px solid #f1f1f1;border-radius:var(--r);box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;padding:22px;min-height:280px}
+    .art img{max-width:100%;height:auto;border-radius:12px}
+    /* grid */
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:26px 0 60px}
-    .card{
-      background:#fff;border:1px solid #f1f1f1;border-radius:var(--radius-sm);box-shadow:var(--card-shadow);overflow:hidden
-    }
+    .card{background:#fff;border:1px solid #f1f1f1;border-radius:var(--rs);box-shadow:var(--shadow);overflow:hidden}
     .card img{width:100%;height:210px;object-fit:cover}
     .card-body{padding:16px}
-    .kicker{color:#c22; font-size:12px; font-weight:700; letter-spacing:.04em; text-transform:uppercase}
-    .title{margin:6px 0 6px;font-size:20px;color:#17324a}
+    .kicker{color:#c22;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+    .ttl{margin:6px 0 6px;font-size:20px;color:#17324a}
     .desc{margin:0;color:#555;font-size:14px;line-height:1.45}
-    /* Center CTA */
-    .center-cta{display:flex;justify-content:center;padding:12px 0 70px}
-    /* Footer mini */
+    .center{display:flex;justify-content:center;padding:8px 0 70px}
     .foot{border-top:1px solid #eee;color:#8b8b8b;font-size:12px;padding:20px 0 40px;text-align:center}
-    @media (max-width:980px){
-      .hero-inner{grid-template-columns:1fr}
-      .headline{font-size:38px}
-      .grid{grid-template-columns:1fr;gap:16px}
-    }
+    @media (max-width:980px){.hero-grid{grid-template-columns:1fr}.h1{font-size:36px}.grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <!-- Top bar -->
-  <div class="container topbar">
-    <div class="brand">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Chick-fil-A_Logo.svg" alt="Chick‑fil‑A">
-      <span style="font-weight:700;color:#c22;">Find a restaurant</span>
-    </div>
-    <div class="nav">
-      <span>Menu</span><span>Stories</span><span>About</span><span>Careers</span>
-    </div>
-    <div class="actions">
-      <button class="btn-sm">Sign in</button>
-      <button class="btn-primary-sm">Order now</button>
-    </div>
+  <!-- top bar with NON‑TRADEMARK generic chicken icon -->
+  <div class="wrap top">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Chicken_silhouette.svg/120px-Chicken_silhouette.svg.png" alt="Brand icon">
+    <span class="brand">Find a restaurant</span>
   </div>
 
-  <!-- Hero -->
-  <section class="container hero">
-    <div class="hero-inner">
-      <div class="hero-card">
+  <!-- hero -->
+  <section class="wrap hero">
+    <div class="hero-grid">
+      <div class="panel">
         <div class="eyebrow">Welcome</div>
-        <h1 class="headline">An original then, an<br/>original now</h1>
-        <p class="copy">Bright sips & cozy bites. Click below to claim your free Chick‑fil‑A® sandwich reward.</p>
-        <div class="hero-ctas">
-          <!-- BullPhish tracking token goes here -->
-          <a href="{{URL}}" class="btn btn-primary">Order pickup</a>
-          <a href="{{URL}}" class="btn btn-ghost">Order delivery</a>
-        </div>
+        <h1 class="h1">An original then, an<br/>original now</h1>
+        <p class="copy">Click below to claim your free sandwich reward as part of our limited‑time guest promotion.</p>
+        <!-- BullPhish injects tracking here -->
+        <a href="{{URL}}" class="cta">Claim Free Item</a>
       </div>
-      <div class="hero-art">
-        <!-- Use any safe hosted image; swap if you prefer another hero -->
-        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1600&auto=format&fit=crop" alt="Chicken sandwich">
+      <div class="art">
+        <!-- HERO image (generic chicken sandwich) -->
+        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1600&auto=format&fit=crop" alt="Classic chicken sandwich">
       </div>
     </div>
   </section>
 
-  <!-- Feature grid -->
-  <section class="container">
+  <!-- three feature cards -->
+  <section class="wrap">
     <div class="grid">
+      <!-- Cherry Berry Drink (generic) -->
       <article class="card">
-        <img src="https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?q=80&w=1200&auto=format&fit=crop" alt="Cherry Berry & Sprite">
+        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c76f0?q=80&w=1600&auto=format&fit=crop" alt="Cherry Berry Drink">
         <div class="card-body">
           <div class="kicker">Limited time</div>
-          <h3 class="title">Cherry Berry & Sprite®</h3>
-          <p class="desc">Refreshing natural cherry and berry flavors with crisp Sprite fizz.</p>
+          <h3 class="ttl">Cherry Berry Drink</h3>
+          <p class="desc">Refreshing natural cherry and berry flavors with crisp fizz.</p>
         </div>
       </article>
+
+      <!-- Pretzel Cheddar Club (generic pretzel‑bun chicken) -->
       <article class="card">
-        <img src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?q=80&w=1200&auto=format&fit=crop" alt="Pretzel Cheddar Club">
+        <img src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?q=80&w=1600&auto=format&fit=crop" alt="Pretzel Cheddar Club">
         <div class="card-body">
           <div class="kicker">Limited time</div>
-          <h3 class="title">Pretzel Cheddar Club</h3>
+          <h3 class="ttl">Pretzel Cheddar Club</h3>
           <p class="desc">Stacked with grilled chicken, cheddar, and bacon on a pretzel bun.</p>
         </div>
       </article>
+
+      <!-- Waffle Potato Fries (generic fries) -->
       <article class="card">
-        <img src="https://images.unsplash.com/photo-1541599188778-cdc73298e8f9?q=80&w=1200&auto=format&fit=crop" alt="Waffle Potato Fries">
+        <img src="https://images.unsplash.com/photo-1541599188778-cdc73298e8f9?q=80&w=1600&auto=format&fit=crop" alt="Waffle‑style Fries">
         <div class="card-body">
           <div class="kicker">Customer favorite</div>
-          <h3 class="title">Waffle Potato Fries</h3>
-          <p class="desc">Lightly salted and perfectly crispy. A fan favorite.</p>
+          <h3 class="ttl">Waffle‑style Fries</h3>
+          <p class="desc">Lightly salted and perfectly crispy. A guest favorite.</p>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- Center CTA -->
-  <div class="center-cta">
-    <a href="{{URL}}" class="btn btn-primary">Order Now</a>
+  <!-- center CTA -->
+  <div class="center">
+    <a href="{{URL}}" class="cta">Claim Free Item</a>
   </div>
 
-  <!-- Footer -->
-  <footer class="container foot">
-    <div>© 2025 CFA Properties, Inc. This page is for training simulation only.</div>
+  <footer class="wrap foot">
+    © 2025 Training Simulation. For awareness testing only.
   </footer>
 </body>
 </html>
