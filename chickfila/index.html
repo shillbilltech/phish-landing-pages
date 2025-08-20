@@ -13,10 +13,12 @@
     body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:#fff}
     a{color:inherit}
     .wrap{max-width:var(--w);margin:0 auto;padding:0 20px}
+
     /* top */
     .top{display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid #eee}
     .top img{height:28px;width:auto}
     .brand{font-weight:700;color:#c22}
+
     /* hero */
     .hero{padding:46px 0 10px}
     .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
@@ -27,6 +29,7 @@
     .cta{display:inline-block;background:var(--red);color:#fff;text-decoration:none;border:none;border-radius:999px;padding:14px 24px;font-weight:600;box-shadow:0 6px 14px rgba(229,23,63,.18)}
     .art{background:#fff;border:1px solid #f1f1f1;border-radius:var(--r);box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;padding:22px;min-height:280px}
     .art img{max-width:100%;height:auto;border-radius:12px}
+
     /* grid */
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:26px 0 60px}
     .card{background:#fff;border:1px solid #f1f1f1;border-radius:var(--rs);box-shadow:var(--shadow);overflow:hidden}
@@ -35,14 +38,21 @@
     .kicker{color:#c22;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
     .ttl{margin:6px 0 6px;font-size:20px;color:#17324a}
     .desc{margin:0;color:#555;font-size:14px;line-height:1.45}
+
     .center{display:flex;justify-content:center;padding:8px 0 70px}
     .foot{border-top:1px solid #eee;color:#8b8b8b;font-size:12px;padding:20px 0 40px;text-align:center}
-    @media (max-width:980px){.hero-grid{grid-template-columns:1fr}.h1{font-size:36px}.grid{grid-template-columns:1fr}}
+
+    @media (max-width:980px){
+      .hero-grid{grid-template-columns:1fr}
+      .h1{font-size:36px}
+      .grid{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body>
   <!-- top bar with NON‑TRADEMARK generic chicken icon -->
   <div class="wrap top">
+    <!-- If you add img/logo.png locally, replace the src below with src="img/logo.png?v=1" -->
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Chicken_silhouette.svg/120px-Chicken_silhouette.svg.png" alt="Brand icon">
     <span class="brand">Find a restaurant</span>
   </div>
@@ -58,8 +68,8 @@
         <a href="{{URL}}" class="cta">Claim Free Item</a>
       </div>
       <div class="art">
-        <!-- HERO image (generic chicken sandwich) -->
-        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1600&auto=format&fit=crop&v=2" alt="Classic Chicken Sandwich">
+        <!-- HERO image (classic/original sandwich) -->
+        <img src="img/originalsandwhich.jpg?v=1" alt="Classic Chicken Sandwich">
       </div>
     </div>
   </section>
@@ -67,9 +77,9 @@
   <!-- three feature cards -->
   <section class="wrap">
     <div class="grid">
-      <!-- Cherry Berry Drink (generic) -->
+      <!-- Cherry Berry Drink (your local drink image) -->
       <article class="card">
-        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c76f0?q=80&w=1600&auto=format&fit=crop&v=2" alt="Cherry Berry Drink">
+        <img src="img/sprite.jpg?v=1" alt="Cherry Berry Drink">
         <div class="card-body">
           <div class="kicker">Limited time</div>
           <h3 class="ttl">Cherry Berry Drink</h3>
@@ -77,9 +87,9 @@
         </div>
       </article>
 
-      <!-- Pretzel Cheddar Club (generic pretzel‑bun chicken) -->
+      <!-- Pretzel Cheddar Club -->
       <article class="card">
-        <img src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?q=80&w=1600&auto=format&fit=crop&v=2" alt="Pretzel Cheddar Club">
+        <img src="img/pretzelsandwhich.jpg?v=1" alt="Pretzel Cheddar Club">
         <div class="card-body">
           <div class="kicker">Limited time</div>
           <h3 class="ttl">Pretzel Cheddar Club</h3>
@@ -87,9 +97,9 @@
         </div>
       </article>
 
-      <!-- Waffle Potato Fries (generic fries) -->
+      <!-- Waffle‑style Fries -->
       <article class="card">
-        <img src="https://images.unsplash.com/photo-1541599188778-cdc73298e8f9?q=80&w=1600&auto=format&fit=crop&v=2" alt="Waffle‑style Fries">
+        <img src="img/fries.jpg?v=1" alt="Waffle‑style Fries">
         <div class="card-body">
           <div class="kicker">Customer favorite</div>
           <h3 class="ttl">Waffle‑style Fries</h3>
